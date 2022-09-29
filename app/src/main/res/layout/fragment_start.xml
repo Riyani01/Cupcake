@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".StartFragment">
-<!-- -->
+<!--TODO 5c.: Pada fragment_start.xml merupakan  layout  fragment yang tampil pertama kali ketika aplikasi dijalankan,menggunakan data dari class startFragment-->
     <data>
         <variable
             name="startFragment"
@@ -38,6 +38,8 @@
                 android:textAppearance="?attr/textAppearanceHeadline4"
                 android:textColor="@color/material_on_background_emphasis_medium" />
 
+             <!-- Button-button di bawah ini adalah button yang diklik ketika user memilih banyaknya cupcake,
+            saat button ini diklik akan mengarahkan pada fungsi orderCupcake yang ada pada class StartFragment -->
             <Button
                 android:id="@+id/order_one_cupcake"
                 android:layout_width="wrap_content"

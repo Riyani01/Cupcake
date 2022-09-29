@@ -18,7 +18,7 @@ class StartFragment : Fragment() {
 
 
     private val sharedViewModel: OrderViewModel by activityViewModels()
-    //Saat
+    //Fungsi dibawah ini dibuat untuk digunakan pada fragment_start
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,17 +33,17 @@ class StartFragment : Fragment() {
         binding?.startFragment = this
     }
 
-
+    //Fungsi dibawah ini dijalankan ketika user memilih berapa banyak cupcake yang akan dipesan
     fun orderCupcake(quantity: Int) {
 
         sharedViewModel.setQuantity(quantity)
 
-
+        //Secara default untuk pilihan rasa disetting pada rasa Vanila
         if (sharedViewModel.hasNoFlavorSet()) {
             sharedViewModel.setFlavor(getString(R.string.vanilla))
         }
 
-
+         //Karena hanya memiliki satu activity saja, dengan banyak fragment di dalamnya maka tidak menggunakan Binding tetapi menggunakan navigate untuk mengarahkan ke fragment berikutnya yakni flavor fragment untuk dijalankan
         findNavController().navigate(R.id.action_startFragment_to_flavorFragment)
     }
 
